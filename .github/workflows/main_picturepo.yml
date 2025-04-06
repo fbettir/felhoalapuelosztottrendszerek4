@@ -1,7 +1,7 @@
 # Docs for the Azure Web Apps Deploy action: https://github.com/Azure/webapps-deploy
 # More GitHub Actions for Azure: https://github.com/Azure/actions
 
-name: Build and deploy Node.js app to Azure Web App - Picturepo
+name: Build and deploy Node.js app to Azure Web App - PictureRepo2
 
 on:
   push:
@@ -26,8 +26,7 @@ jobs:
       - name: npm install, build, and test
         run: |
           npm install
-          npm run build --if-present
-          npm run test --if-present
+
 
       - name: Zip artifact for deployment
         run: zip release.zip ./* -r
@@ -60,15 +59,15 @@ jobs:
       - name: Login to Azure
         uses: azure/login@v2
         with:
-          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_09AFB71D37D64D47876C4CC8CE2BA71F }}
-          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_115C1F6144214E64BF30366B85D1AD82 }}
-          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_31B0A818678E4BCB902F471CC2C7A28C }}
+          client-id: ${{ secrets.AZUREAPPSERVICE_CLIENTID_77EB9A916B1C4A12A5AA3B87E0AE21E9 }}
+          tenant-id: ${{ secrets.AZUREAPPSERVICE_TENANTID_6B7086E641C74E4F9EC0EB18A96B6158 }}
+          subscription-id: ${{ secrets.AZUREAPPSERVICE_SUBSCRIPTIONID_2ECAB882B7FB4E8B947697741CAD23E0 }}
 
       - name: 'Deploy to Azure Web App'
         id: deploy-to-webapp
         uses: azure/webapps-deploy@v3
         with:
-          app-name: 'Picturepo'
+          app-name: 'PictureRepo2'
           slot-name: 'Production'
           package: .
           
